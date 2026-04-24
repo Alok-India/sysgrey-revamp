@@ -1,128 +1,172 @@
 ---
-// Sysgrey Technologies - Astro Demo
-const title = "Sysgrey Technologies | Modern Enterprise Solutions";
+// Sysgrey Technologies - Full Modern Revamp
+const title = "Sysgrey Technologies | Bridging the Gap through Niche Skill Development";
+const description = "Leading software consultancy specializing in MS Dynamics 365, Power BI, .Net Modernization, and Executive IT Staffing.";
+
 const services = [
   { 
+    id: "crm",
     name: "CRM Solutions", 
-    desc: "Expert Dynamics 365 implementation and customization.",
-    icon: "🎯" 
+    tagline: "Dynamics 365 Excellence",
+    desc: "Streamline sales, marketing, and service with expert implementation, customization, and seamless integration of MS Dynamics CRM.",
+    icon: "🎯",
+    features: ["Custom Workflows", "Integration Hub", "Sales Automation"]
   },
   { 
+    id: "data",
     name: "Data Intelligence", 
-    desc: "Transforming raw data into insights with Power BI & SQL.",
-    icon: "📊" 
+    tagline: "Insight-Driven Growth",
+    desc: "Transform complex datasets into actionable strategy using Power BI, SSIS, SSRS, and high-performance SQL reporting.",
+    icon: "📊",
+    features: ["Real-time Dashboards", "ETL Pipelines", "Predictive Analytics"]
   },
   { 
+    id: "apps",
     name: "App Modernization", 
-    desc: "Cloud-native development using .Net and Power Apps.",
-    icon: "☁️" 
+    tagline: "Cloud-First Development",
+    desc: "Build scalable, secure enterprise applications using .Net Core and automate business processes with custom Power Apps.",
+    icon: "☁️",
+    features: ["Microservices", "Low-Code Apps", "Azure Cloud"]
   },
   { 
-    name: "IT Staffing", 
-    desc: "Bridging the talent gap with niche skill development.",
-    icon: "👥" 
+    id: "staffing",
+    name: "Consultancy & Staffing", 
+    tagline: "Niche Talent Acquisition",
+    desc: "Expert Executive Search and Niche Skill Development focused on IT, Retail, Banking, and specialized technical placements.",
+    icon: "👥",
+    features: ["Executive Search", "Technical Staffing", "Skill Gap Training"]
+  }
+];
+
+const leaders = [
+  {
+    name: "Alok Kumar",
+    role: "Director & Advisor",
+    bio: "IIT BHU Alumnus with 20+ years of expertise. Former CIO at QBS Learning and Senior VP at TeBS Singapore & Apar Technologies. Expert in AWS/Azure modernization.",
+    img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400"
+  },
+  {
+    name: "Anubhav Singh",
+    role: "Chief Operating Officer",
+    bio: "19+ years of mastery in Talent Acquisition and the Human Resource industry. Specializes in managing and visualizing staffing programs for exponential growth.",
+    img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=400"
+  },
+  {
+    name: "Alok Kumar Singh",
+    role: "Project Leader",
+    bio: "MS Dynamics 365 Consultant with 9+ years in Microsoft stacks. B.E. Computer Engineering. Handled global projects in Education, Finance, and Manufacturing.",
+    img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=400"
   }
 ];
 ---
 
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<title>{title}</title>
+		<meta name="description" content={description} />
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
 		<style>
 			:root {
-				--bg: #0f172a;
+				--bg: #020617;
+				--surface: #0f172a;
 				--accent: #38bdf8;
-				--text: #f8fafc;
-				--card-bg: #1e293b;
+				--accent-dark: #0284c7;
+				--text-main: #f1f5f9;
+				--text-dim: #94a3b8;
+				--border: #1e293b;
 			}
 			body {
 				margin: 0;
 				background-color: var(--bg);
-				color: var(--text);
-				font-family: 'Inter', sans-serif;
+				color: var(--text-main);
+				font-family: 'Geist', sans-serif;
 				line-height: 1.6;
 			}
-			.container {
-				max-width: 1200px;
-				margin: 0 auto;
-				padding: 0 2rem;
-			}
+			.container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+			
+			/* Header */
 			header {
-				padding: 2rem 0;
+				padding: 1.5rem 0;
 				display: flex;
 				justify-content: space-between;
 				align-items: center;
+				position: sticky;
+				top: 0;
+				background: rgba(2, 6, 23, 0.8);
+				backdrop-filter: blur(12px);
+				z-index: 100;
+				border-bottom: 1px solid var(--border);
 			}
-			.logo {
-				font-size: 1.5rem;
-				font-weight: 900;
-				letter-spacing: -1px;
-				color: var(--accent);
+			.logo { font-size: 1.25rem; font-weight: 800; color: var(--accent); letter-spacing: -0.5px; }
+			nav { display: flex; gap: 2rem; }
+			nav a { color: var(--text-dim); text-decoration: none; font-size: 0.875rem; font-weight: 500; transition: color 0.2s; }
+			nav a:hover { color: var(--accent); }
+
+			/* Hero Section */
+			.hero { padding: 10rem 0 6rem; position: relative; overflow: hidden; }
+			.hero-content { position: relative; z-index: 2; max-width: 900px; }
+			.hero h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 900; line-height: 1.05; letter-spacing: -3px; margin-bottom: 2rem; }
+			.gradient-text { background: linear-gradient(135deg, #fff 30%, var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+			.hero p { font-size: 1.25rem; color: var(--text-dim); max-width: 600px; margin-bottom: 3rem; }
+
+			/* Buttons */
+			.btn { 
+				background: var(--accent); color: var(--bg); padding: 0.875rem 2rem; border-radius: 8px; 
+				text-decoration: none; font-weight: 700; display: inline-block; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
 			}
-			.hero {
-				padding: 8rem 0;
-				text-align: center;
+			.btn:hover { background: #fff; transform: translateY(-2px); box-shadow: 0 10px 20px rgba(56, 189, 248, 0.2); }
+			.btn-outline { background: transparent; border: 1px solid var(--border); color: #fff; margin-left: 1rem; }
+			.btn-outline:hover { border-color: var(--accent); background: rgba(56, 189, 248, 0.05); }
+
+			/* Services Grid */
+			section { padding: 8rem 0; }
+			.section-header { margin-bottom: 4rem; }
+			.section-header h2 { font-size: 2.5rem; font-weight: 800; letter-spacing: -1px; }
+			.section-header p { color: var(--text-dim); font-size: 1.125rem; }
+
+			.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+			.service-card { 
+				background: var(--surface); padding: 3rem 2rem; border-radius: 20px; border: 1px solid var(--border);
+				transition: all 0.4s ease; position: relative; overflow: hidden;
 			}
-			h1 {
-				font-size: clamp(3rem, 8vw, 5rem);
-				line-height: 1.1;
-				font-weight: 900;
-				margin-bottom: 1.5rem;
-				letter-spacing: -2px;
-			}
-			.accent-text {
-				background: linear-gradient(to right, #38bdf8, #818cf8);
-				-webkit-background-clip: text;
-				-webkit-text-fill-color: transparent;
-			}
-			.tagline {
-				font-size: 1.25rem;
-				color: #94a3b8;
-				max-width: 600px;
-				margin: 0 auto 3rem;
-			}
-			.services-grid {
-				display: grid;
-				grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-				gap: 2rem;
-				padding-bottom: 8rem;
-			}
-			.service-card {
-				background: var(--card-bg);
-				padding: 3rem 2rem;
-				border-radius: 1.5rem;
-				border: 1px solid #334155;
-				transition: transform 0.3s ease, border-color 0.3s ease;
-			}
-			.service-card:hover {
-				transform: translateY(-10px);
-				border-color: var(--accent);
-			}
-			.icon { font-size: 3rem; margin-bottom: 1.5rem; display: block; }
-			h3 { font-size: 1.5rem; margin-bottom: 1rem; }
-			.btn {
-				background: var(--accent);
-				color: var(--bg);
-				padding: 1rem 2.5rem;
-				border-radius: 100px;
-				text-decoration: none;
-				font-weight: 700;
-				display: inline-block;
-				transition: opacity 0.3s;
-			}
-			.btn:hover { opacity: 0.9; }
-			footer {
-				border-top: 1px solid #334155;
-				padding: 4rem 0;
-				text-align: center;
-				color: #64748b;
-				font-size: 0.875rem;
+			.service-card:hover { border-color: var(--accent); transform: translateY(-8px); background: #111827; }
+			.service-card .icon { font-size: 2.5rem; margin-bottom: 1.5rem; display: block; }
+			.service-card h3 { font-size: 1.5rem; margin-bottom: 0.5rem; }
+			.service-card .tagline { color: var(--accent); font-size: 0.875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1rem; display: block; }
+			.service-card p { color: var(--text-dim); font-size: 0.95rem; margin-bottom: 2rem; }
+			.feature-list { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--border); pt: 1.5rem; }
+			.feature-list li { font-size: 0.875rem; color: #fff; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem; }
+			.feature-list li::before { content: "✓"; color: var(--accent); font-weight: 900; }
+
+			/* Leadership */
+			.leaders-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+			.leader-card { background: var(--surface); border-radius: 24px; border: 1px solid var(--border); overflow: hidden; }
+			.leader-img { width: 100%; height: 300px; object-fit: cover; filter: grayscale(100%) contrast(1.1); transition: 0.5s ease; }
+			.leader-card:hover .leader-img { filter: grayscale(0%); }
+			.leader-info { padding: 2rem; }
+			.leader-info h4 { font-size: 1.5rem; margin-bottom: 0.25rem; }
+			.leader-info span { color: var(--accent); font-weight: 600; display: block; margin-bottom: 1.5rem; }
+			.leader-info p { font-size: 0.875rem; color: var(--text-dim); }
+
+			/* Global Presence */
+			.offices { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 4rem; }
+			.office h4 { font-size: 1.25rem; margin-bottom: 1rem; border-left: 3px solid var(--accent); padding-left: 1rem; }
+			.office p { color: var(--text-dim); font-size: 0.9rem; white-space: pre-line; }
+
+			/* Footer */
+			footer { padding: 4rem 0; border-top: 1px solid var(--border); }
+			.footer-flex { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 2rem; }
+			.copyright { color: var(--text-dim); font-size: 0.875rem; }
+
+			@media (max-width: 768px) {
+				nav { display: none; }
+				.hero { padding: 6rem 0; }
+				.btn-outline { margin: 1rem 0 0; display: block; width: fit-content; }
 			}
 		</style>
 	</head>
@@ -131,28 +175,95 @@ const services = [
 			<header>
 				<div class="logo">SYSGREY_</div>
 				<nav>
-					<a href="#" style="color: white; text-decoration: none;">Solutions</a>
+					<a href="#solutions">Solutions</a>
+					<a href="#leadership">Leadership</a>
+					<a href="#global">Global</a>
+					<a href="#contact">Contact</a>
 				</nav>
 			</header>
 
-			<section class="hero">
-				<h1>Bridging the gap with <span class="accent-text">Niche Expertise.</span></h1>
-				<p class="tagline">From Dynamics 365 to Power BI, we empower enterprises with software that transforms business.</p>
-				<a href="#contact" class="btn">Get Started</a>
-			</section>
-
-			<div class="services-grid">
-				{services.map(s => (
-					<div class="service-card">
-						<span class="icon">{s.icon}</span>
-						<h3>{s.name}</h3>
-						<p style="color: #94a3b8;">{s.desc}</p>
+			<main>
+				<section class="hero">
+					<div class="hero-content">
+						<h1><span class="gradient-text">Enterprise Software</span><br/>Modernized.</h1>
+						<p>We bridge the niche skill gap for global enterprises through high-impact Microsoft Dynamics 365, Data Analytics, and Cloud Solutions.</p>
+						<div class="actions">
+							<a href="#contact" class="btn">Request Consultation</a>
+							<a href="#solutions" class="btn btn-outline">Explore Solutions</a>
+						</div>
 					</div>
-				))}
-			</div>
+				</section>
+
+				<section id="solutions">
+					<div class="section-header">
+						<span class="tagline" style="color: var(--accent); font-weight: 700; text-transform: uppercase;">Our Core Pillars</span>
+						<h2>Strategic Niche Expertise</h2>
+					</div>
+					<div class="services-grid">
+						{services.map(s => (
+							<div class="service-card">
+								<span class="icon">{s.icon}</span>
+								<span class="tagline">{s.tagline}</span>
+								<h3>{s.name}</h3>
+								<p>{s.desc}</p>
+								<ul class="feature-list">
+									{s.features.map(f => <li>{f}</li>)}
+								</ul>
+							</div>
+						))}
+					</div>
+				</section>
+
+				<section id="leadership" style="background: #000; margin-left: -50vw; margin-right: -50vw; padding-left: 50vw; padding-right: 50vw;">
+					<div class="section-header">
+						<span class="tagline" style="color: var(--accent); font-weight: 700; text-transform: uppercase;">Our Founders</span>
+						<h2>Experience at the Helm</h2>
+					</div>
+					<div class="leaders-grid">
+						{leaders.map(l => (
+							<div class="leader-card">
+								<img src={l.img} alt={l.name} class="leader-img" />
+								<div class="leader-info">
+									<h4>{l.name}</h4>
+									<span>{l.role}</span>
+									<p>{l.bio}</p>
+								</div>
+							</div>
+						))}
+					</div>
+				</section>
+
+				<section id="global">
+					<div class="section-header">
+						<h2>Global Presence</h2>
+						<p>Serving enterprise clients from our strategic hubs.</p>
+					</div>
+					<div class="offices">
+						<div class="office">
+							<h4>Singapore</h4>
+							<p>1 North Bridge Road #18-03
+							High Street Center
+							Singapore - 179094
+							
+							alok.kumar@sysgreytech.com</p>
+						</div>
+						<div class="office">
+							<h4>India</h4>
+							<p>Unit No 604, Artha Mart
+							TechZone 4, Greater Noida West
+							Uttar Pradesh - 201318
+							
+							anubhav.singh@sysgreytech.com</p>
+						</div>
+					</div>
+				</section>
+			</main>
 
 			<footer>
-				© 2026 Sysgrey Technologies • Singapore | India
+				<div class="footer-flex">
+					<div class="logo">SYSGREY_</div>
+					<div class="copyright">© 2026 Sysgrey Technologies. All Rights Reserved.</div>
+				</div>
 			</footer>
 		</div>
 	</body>
