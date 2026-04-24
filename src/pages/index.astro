@@ -1,0 +1,159 @@
+---
+// Sysgrey Technologies - Astro Demo
+const title = "Sysgrey Technologies | Modern Enterprise Solutions";
+const services = [
+  { 
+    name: "CRM Solutions", 
+    desc: "Expert Dynamics 365 implementation and customization.",
+    icon: "🎯" 
+  },
+  { 
+    name: "Data Intelligence", 
+    desc: "Transforming raw data into insights with Power BI & SQL.",
+    icon: "📊" 
+  },
+  { 
+    name: "App Modernization", 
+    desc: "Cloud-native development using .Net and Power Apps.",
+    icon: "☁️" 
+  },
+  { 
+    name: "IT Staffing", 
+    desc: "Bridging the talent gap with niche skill development.",
+    icon: "👥" 
+  }
+];
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<title>{title}</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+		<style>
+			:root {
+				--bg: #0f172a;
+				--accent: #38bdf8;
+				--text: #f8fafc;
+				--card-bg: #1e293b;
+			}
+			body {
+				margin: 0;
+				background-color: var(--bg);
+				color: var(--text);
+				font-family: 'Inter', sans-serif;
+				line-height: 1.6;
+			}
+			.container {
+				max-width: 1200px;
+				margin: 0 auto;
+				padding: 0 2rem;
+			}
+			header {
+				padding: 2rem 0;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+			}
+			.logo {
+				font-size: 1.5rem;
+				font-weight: 900;
+				letter-spacing: -1px;
+				color: var(--accent);
+			}
+			.hero {
+				padding: 8rem 0;
+				text-align: center;
+			}
+			h1 {
+				font-size: clamp(3rem, 8vw, 5rem);
+				line-height: 1.1;
+				font-weight: 900;
+				margin-bottom: 1.5rem;
+				letter-spacing: -2px;
+			}
+			.accent-text {
+				background: linear-gradient(to right, #38bdf8, #818cf8);
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+			}
+			.tagline {
+				font-size: 1.25rem;
+				color: #94a3b8;
+				max-width: 600px;
+				margin: 0 auto 3rem;
+			}
+			.services-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+				gap: 2rem;
+				padding-bottom: 8rem;
+			}
+			.service-card {
+				background: var(--card-bg);
+				padding: 3rem 2rem;
+				border-radius: 1.5rem;
+				border: 1px solid #334155;
+				transition: transform 0.3s ease, border-color 0.3s ease;
+			}
+			.service-card:hover {
+				transform: translateY(-10px);
+				border-color: var(--accent);
+			}
+			.icon { font-size: 3rem; margin-bottom: 1.5rem; display: block; }
+			h3 { font-size: 1.5rem; margin-bottom: 1rem; }
+			.btn {
+				background: var(--accent);
+				color: var(--bg);
+				padding: 1rem 2.5rem;
+				border-radius: 100px;
+				text-decoration: none;
+				font-weight: 700;
+				display: inline-block;
+				transition: opacity 0.3s;
+			}
+			.btn:hover { opacity: 0.9; }
+			footer {
+				border-top: 1px solid #334155;
+				padding: 4rem 0;
+				text-align: center;
+				color: #64748b;
+				font-size: 0.875rem;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<header>
+				<div class="logo">SYSGREY_</div>
+				<nav>
+					<a href="#" style="color: white; text-decoration: none;">Solutions</a>
+				</nav>
+			</header>
+
+			<section class="hero">
+				<h1>Bridging the gap with <span class="accent-text">Niche Expertise.</span></h1>
+				<p class="tagline">From Dynamics 365 to Power BI, we empower enterprises with software that transforms business.</p>
+				<a href="#contact" class="btn">Get Started</a>
+			</section>
+
+			<div class="services-grid">
+				{services.map(s => (
+					<div class="service-card">
+						<span class="icon">{s.icon}</span>
+						<h3>{s.name}</h3>
+						<p style="color: #94a3b8;">{s.desc}</p>
+					</div>
+				))}
+			</div>
+
+			<footer>
+				© 2026 Sysgrey Technologies • Singapore | India
+			</footer>
+		</div>
+	</body>
+</html>
