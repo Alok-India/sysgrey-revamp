@@ -1,5 +1,5 @@
 ---
-// Sysgrey Technologies - Full Content Revamp (Light Theme)
+// Sysgrey Technologies - Final Content & HD Logo (Light Theme)
 const title = "Sysgrey Technologies | Bridging the Gap through Niche Skill Development";
 const description = "Leading software consultancy specializing in MS Dynamics 365, Power BI, .Net Modernization, and Executive IT Staffing.";
 
@@ -59,19 +59,19 @@ const leaders = [
     name: "Alok Kumar",
     role: "Director",
     bio: "IIT BHU Alumnus with over 20 years of professional experience. Former CIO at QBS Learning, Senior VP at TeBS Singapore and Apar Technologies. Expertise in app modernization (AWS/Azure) and Microsoft stacks.",
-    img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400"
+    img: "https://sysgreytech.com/images/alok.jpg"
   },
   {
     name: "Anubhav Singh",
     role: "Chief Operating Officer",
     bio: "Over 19 years of experience in Talent Acquisition and Human Resource Industry. Guided several innovative companies in managing and attaining staffing programs to deliver exponential growth.",
-    img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=400"
+    img: "https://sysgreytech.com/images/anubhav.jpg"
   },
   {
     name: "Alok Kumar Singh",
     role: "Project Leader",
     bio: "MS Dynamic 365 Consultant with 9+ years of experience in MS Technologies (ASP.Net, MSSQL, MVC, C#). Managed diverse projects in Education, Finance, Manufacturing, and Sales.",
-    img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=400"
+    img: "https://sysgreytech.com/images/aloksingh.jpg"
   }
 ];
 
@@ -112,30 +112,31 @@ const clients = [
 				font-family: 'Geist', sans-serif;
 				line-height: 1.6;
 			}
+			.full-width { width: 100%; }
 			.container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
 			
 			/* Header - FULL WIDTH */
 			header {
 				width: 100%;
-				padding: 1.25rem 2rem;
+				padding: 1rem 2rem;
 				display: flex;
 				justify-content: space-between;
 				align-items: center;
 				position: sticky;
 				top: 0;
-				background: rgba(255, 255, 255, 0.9);
+				background: rgba(255, 255, 255, 0.95);
 				backdrop-filter: blur(12px);
 				z-index: 100;
 				border-bottom: 1px solid var(--border);
 				box-sizing: border-box;
 			}
-			.logo { font-size: 1.25rem; font-weight: 800; color: var(--accent); letter-spacing: -0.5px; }
+			.header-logo { height: 45px; width: auto; display: block; }
 			nav { display: flex; gap: 2rem; }
 			nav a { color: var(--text-dim); text-decoration: none; font-size: 0.875rem; font-weight: 600; transition: color 0.2s; }
 			nav a:hover { color: var(--accent); }
 
 			/* Hero Section */
-			.hero { padding: 10rem 0 6rem; position: relative; overflow: hidden; }
+			.hero { padding: 8rem 0 4rem; position: relative; overflow: hidden; }
 			.hero-content { position: relative; z-index: 2; max-width: 900px; }
 			.hero h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 900; line-height: 1.05; letter-spacing: -3px; margin-bottom: 2rem; color: #020617; }
 			.gradient-text { background: linear-gradient(135deg, #020617 30%, var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
@@ -150,16 +151,16 @@ const clients = [
 			.btn-outline { background: transparent; border: 1.5px solid var(--border); color: var(--text-main); margin-left: 1rem; }
 			.btn-outline:hover { border-color: var(--accent); background: rgba(56, 189, 248, 0.05); }
 
-			/* Sections */
-			section { padding: 8rem 0; }
-			.section-header { margin-bottom: 4.5rem; }
+			/* Sections - REDUCED GAP */
+			section { padding: 4rem 0; }
+			.section-header { margin-bottom: 3rem; }
 			.section-header h2 { font-size: 2.75rem; font-weight: 800; letter-spacing: -1.5px; color: #020617; margin-bottom: 1rem; }
 			.section-header p { color: var(--text-dim); font-size: 1.125rem; max-width: 700px; }
 
 			/* Services Grid */
 			.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; }
 			.service-card { 
-				background: var(--surface); padding: 3.5rem 2.5rem; border-radius: 24px; border: 1px solid var(--border);
+				background: var(--surface); padding: 3rem 2.5rem; border-radius: 24px; border: 1px solid var(--border);
 				transition: all 0.4s ease; position: relative; overflow: hidden;
 				box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
 			}
@@ -175,8 +176,8 @@ const clients = [
 			/* Leadership */
 			.leaders-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; }
 			.leader-card { background: var(--surface); border-radius: 28px; border: 1px solid var(--border); overflow: hidden; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.03); }
-			.leader-img { width: 100%; height: 320px; object-fit: cover; filter: grayscale(100%) brightness(0.95); transition: 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
-			.leader-card:hover .leader-img { filter: grayscale(0%) brightness(1); transform: scale(1.05); }
+			.leader-img { width: 100%; height: 320px; object-fit: cover; transition: 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
+			.leader-card:hover .leader-img { transform: scale(1.05); }
 			.leader-info { padding: 2.5rem; }
 			.leader-info h4 { font-size: 1.65rem; margin-bottom: 0.25rem; color: #020617; font-weight: 800; }
 			.leader-info span { color: var(--accent); font-weight: 700; font-size: 0.9rem; display: block; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 0.5px; }
@@ -215,24 +216,26 @@ const clients = [
 			}
 			.submit-btn:hover { background: #fff; color: #020617; }
 
-			/* Footer - FULL WIDTH */
-			footer { width: 100%; padding: 2rem 3rem; border-top: 1px solid var(--border); background: #fff; box-sizing: border-box; }
+			/* Footer - FULL WIDTH SLIM */
+			footer { width: 100%; padding: 1.5rem 3rem; border-top: 1px solid var(--border); background: #fff; box-sizing: border-box; }
 			.footer-flex { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+			.footer-logo { height: 30px; width: auto; opacity: 0.8; }
 			.copyright { color: var(--text-dim); font-size: 0.8rem; }
 
 			@media (max-width: 768px) {
 				nav { display: none; }
 				header { padding: 1rem 1.5rem; }
-				.hero { padding: 6rem 0; }
+				.hero { padding: 6rem 0 3rem; }
 				.btn-outline { margin: 1rem 0 0; display: block; width: fit-content; }
 				.services-grid { grid-template-columns: 1fr; }
 				.contact-card { padding: 3rem 2rem; border-radius: 24px; }
+				section { padding: 3rem 0; }
 			}
 		</style>
 	</head>
 	<body>
 		<header>
-			<div class="logo">SYSGREY TECHNOLOGIES</div>
+			<img src="/sysgrey-revamp/sysgrey-logo.png" alt="Sysgrey Technologies" class="header-logo" />
 			<nav>
 				<a href="#solutions">Solutions</a>
 				<a href="#leadership">Leadership</a>
@@ -295,7 +298,7 @@ const clients = [
 				</section>
 
 				<section id="clients">
-					<div class="section-header text-center" style="margin-bottom: 4rem;">
+					<div class="section-header text-center" style="margin-bottom: 3rem;">
 						<h2 style="margin: 0 auto;">Trusted Expertise</h2>
 						<p style="margin: 1rem auto;">Providing customized solutions across global industries and sectors.</p>
 					</div>
@@ -315,7 +318,7 @@ const clients = [
 							<h2>Ready to build impactful software?</h2>
 							<p>Let's work together to transform your business goals into digital reality. Our experts are ready to advise and guide you.</p>
 							<div style="margin-top: 3rem;">
-								<a href="mailto:info@sysgreytech.com" class="logo" style="text-decoration: none; color: #fff;">info@sysgreytech.com</a>
+								<a href="mailto:info@sysgreytech.com" style="text-decoration: none; color: var(--accent); font-weight: 800; font-size: 1.2rem;">info@sysgreytech.com</a>
 							</div>
 						</div>
 						<div class="contact-form">
@@ -365,7 +368,7 @@ const clients = [
 
 		<footer>
 			<div class="footer-flex">
-				<div class="logo" style="font-size: 1rem;">SYSGREY_</div>
+				<img src="/sysgrey-revamp/sysgrey-logo.png" alt="Sysgrey" class="footer-logo" />
 				<div class="copyright">© 2026 Sysgrey Technologies. All Rights Reserved.</div>
 			</div>
 		</footer>
