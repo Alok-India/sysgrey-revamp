@@ -1,60 +1,76 @@
 ---
-// Sysgrey Technologies - Full Modern Revamp
+// Sysgrey Technologies - Full Content Revamp (Light Theme)
 const title = "Sysgrey Technologies | Bridging the Gap through Niche Skill Development";
 const description = "Leading software consultancy specializing in MS Dynamics 365, Power BI, .Net Modernization, and Executive IT Staffing.";
 
 const services = [
   { 
     id: "crm",
-    name: "CRM Solutions", 
-    tagline: "Dynamics 365 Excellence",
-    desc: "Streamline sales, marketing, and service with expert implementation, customization, and seamless integration of MS Dynamics CRM.",
+    name: "Dynamic CRM 365", 
+    tagline: "Microsoft Excellence",
+    desc: "Implementing, customizing, and integrating Dynamics CRM to fit unique business needs. We help streamline sales, marketing, and customer service processes.",
     icon: "🎯",
-    features: ["Custom Workflows", "Integration Hub", "Sales Automation"]
+    features: ["Custom Implementation", "Seamless Integration", "Sales Automation"]
   },
   { 
     id: "data",
-    name: "Data Intelligence", 
+    name: "Power BI & Analytics", 
     tagline: "Insight-Driven Growth",
-    desc: "Transform complex datasets into actionable strategy using Power BI, SSIS, SSRS, and high-performance SQL reporting.",
+    desc: "Experts in creating custom Power BI reports and dashboards that provide real-time insights into your data using SSIS, SSRS, and SQL.",
     icon: "📊",
-    features: ["Real-time Dashboards", "ETL Pipelines", "Predictive Analytics"]
+    features: ["Real-time Dashboards", "SSIS/SSRS/SQL", "Data Automation"]
   },
   { 
     id: "apps",
-    name: "App Modernization", 
+    name: ".Net & Power Apps", 
     tagline: "Cloud-First Development",
-    desc: "Build scalable, secure enterprise applications using .Net Core and automate business processes with custom Power Apps.",
+    desc: "Developing powerful, scalable, and secure custom .NET applications and Power Apps that automate business processes and enable better collaboration.",
     icon: "☁️",
-    features: ["Microservices", "Low-Code Apps", "Azure Cloud"]
+    features: ["Custom .Net Apps", "Power Apps Automation", "Scalable Architecture"]
+  },
+  { 
+    id: "consultancy",
+    name: "Business Consultancy", 
+    tagline: "Process Transformation",
+    desc: "Analyzing business processes to re-invent productivity. We identify and integrate the right technologies to boost performance and gain customer insights.",
+    icon: "💡",
+    features: ["Operational Change", "Technical Solutions", "Productivity Gains"]
   },
   { 
     id: "staffing",
-    name: "Consultancy & Staffing", 
-    tagline: "Niche Talent Acquisition",
-    desc: "Expert Executive Search and Niche Skill Development focused on IT, Retail, Banking, and specialized technical placements.",
+    name: "Executive Search", 
+    tagline: "Bridging the Talent Gap",
+    desc: "Hands-on expertise on Industrial Development allied to IT, Retail, Banking, Placement, Staffing, and Executive Search.",
     icon: "👥",
-    features: ["Executive Search", "Technical Staffing", "Skill Gap Training"]
+    features: ["Niche Skill Development", "IT Staffing", "Banking & Retail"]
+  },
+  { 
+    id: "maintenance",
+    name: "Software Support", 
+    tagline: "Reliability Guaranteed",
+    desc: "Dedicated software maintenance and troubleshooting for Dynamic CRM, SharePoint, and SQL environments to ensure business continuity.",
+    icon: "🛠️",
+    features: ["Troubleshooting", "SharePoint Support", "Ongoing Maintenance"]
   }
 ];
 
 const leaders = [
   {
     name: "Alok Kumar",
-    role: "Director & Advisor",
-    bio: "IIT BHU Alumnus with 20+ years of expertise. Former CIO at QBS Learning and Senior VP at TeBS Singapore & Apar Technologies. Expert in AWS/Azure modernization.",
+    role: "Director",
+    bio: "IIT BHU Alumnus with over 20 years of professional experience. Former CIO at QBS Learning, Senior VP at TeBS Singapore and Apar Technologies. Expertise in app modernization (AWS/Azure) and Microsoft stacks.",
     img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400"
   },
   {
     name: "Anubhav Singh",
     role: "Chief Operating Officer",
-    bio: "19+ years of mastery in Talent Acquisition and the Human Resource industry. Specializes in managing and visualizing staffing programs for exponential growth.",
+    bio: "Over 19 years of experience in Talent Acquisition and Human Resource Industry. Guided several innovative companies in managing and attaining staffing programs to deliver exponential growth.",
     img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=400"
   },
   {
     name: "Alok Kumar Singh",
     role: "Project Leader",
-    bio: "MS Dynamics 365 Consultant with 9+ years in Microsoft stacks. B.E. Computer Engineering. Handled global projects in Education, Finance, and Manufacturing.",
+    bio: "MS Dynamic 365 Consultant with 9+ years of experience in MS Technologies (ASP.Net, MSSQL, MVC, C#). Managed diverse projects in Education, Finance, Manufacturing, and Sales.",
     img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=400"
   }
 ];
@@ -87,24 +103,27 @@ const leaders = [
 				font-family: 'Geist', sans-serif;
 				line-height: 1.6;
 			}
+			.full-width { width: 100%; }
 			.container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
 			
-			/* Header */
+			/* Header - FULL WIDTH */
 			header {
-				padding: 1.5rem 0;
+				width: 100%;
+				padding: 1.25rem 2rem;
 				display: flex;
 				justify-content: space-between;
 				align-items: center;
 				position: sticky;
 				top: 0;
-				background: rgba(255, 255, 255, 0.8);
+				background: rgba(255, 255, 255, 0.9);
 				backdrop-filter: blur(12px);
 				z-index: 100;
 				border-bottom: 1px solid var(--border);
+				box-sizing: border-box;
 			}
 			.logo { font-size: 1.25rem; font-weight: 800; color: var(--accent); letter-spacing: -0.5px; }
 			nav { display: flex; gap: 2rem; }
-			nav a { color: var(--text-dim); text-decoration: none; font-size: 0.875rem; font-weight: 500; transition: color 0.2s; }
+			nav a { color: var(--text-dim); text-decoration: none; font-size: 0.875rem; font-weight: 600; transition: color 0.2s; }
 			nav a:hover { color: var(--accent); }
 
 			/* Hero Section */
@@ -112,93 +131,99 @@ const leaders = [
 			.hero-content { position: relative; z-index: 2; max-width: 900px; }
 			.hero h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 900; line-height: 1.05; letter-spacing: -3px; margin-bottom: 2rem; color: #020617; }
 			.gradient-text { background: linear-gradient(135deg, #020617 30%, var(--accent)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-			.hero p { font-size: 1.25rem; color: var(--text-dim); max-width: 600px; margin-bottom: 3rem; }
+			.hero p { font-size: 1.25rem; color: var(--text-dim); max-width: 650px; margin-bottom: 3rem; }
 
 			/* Buttons */
 			.btn { 
-				background: var(--accent); color: #fff; padding: 0.875rem 2rem; border-radius: 8px; 
+				background: var(--accent); color: #fff; padding: 0.875rem 2.25rem; border-radius: 12px; 
 				text-decoration: none; font-weight: 700; display: inline-block; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
 			}
-			.btn:hover { background: var(--text-main); transform: translateY(-2px); box-shadow: 0 10px 20px rgba(2, 132, 199, 0.15); }
-			.btn-outline { background: transparent; border: 1px solid var(--border); color: var(--text-main); margin-left: 1rem; }
-			.btn-outline:hover { border-color: var(--accent); background: rgba(2, 132, 199, 0.05); }
+			.btn:hover { background: #020617; transform: translateY(-2px); box-shadow: 0 10px 20px rgba(2, 132, 199, 0.15); }
+			.btn-outline { background: transparent; border: 1.5px solid var(--border); color: var(--text-main); margin-left: 1rem; }
+			.btn-outline:hover { border-color: var(--accent); background: rgba(56, 189, 248, 0.05); }
+
+			/* Sections */
+			section { padding: 8rem 0; }
+			.section-header { margin-bottom: 4.5rem; }
+			.section-header h2 { font-size: 2.75rem; font-weight: 800; letter-spacing: -1.5px; color: #020617; margin-bottom: 1rem; }
+			.section-header p { color: var(--text-dim); font-size: 1.125rem; max-width: 700px; }
 
 			/* Services Grid */
-			section { padding: 8rem 0; }
-			.section-header { margin-bottom: 4rem; }
-			.section-header h2 { font-size: 2.5rem; font-weight: 800; letter-spacing: -1px; color: #020617; }
-			.section-header p { color: var(--text-dim); font-size: 1.125rem; }
-
-			.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+			.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 1.5rem; }
 			.service-card { 
-				background: var(--surface); padding: 3rem 2rem; border-radius: 20px; border: 1px solid var(--border);
+				background: var(--surface); padding: 3.5rem 2.5rem; border-radius: 24px; border: 1px solid var(--border);
 				transition: all 0.4s ease; position: relative; overflow: hidden;
-				box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+				box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02);
 			}
-			.service-card:hover { border-color: var(--accent); transform: translateY(-8px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); }
+			.service-card:hover { border-color: var(--accent); transform: translateY(-10px); box-shadow: 0 25px 40px -12px rgba(0, 0, 0, 0.08); }
 			.service-card .icon { font-size: 2.5rem; margin-bottom: 1.5rem; display: block; }
-			.service-card h3 { font-size: 1.5rem; margin-bottom: 0.5rem; color: #020617; }
-			.service-card .tagline { color: var(--accent); font-size: 0.875rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 1rem; display: block; }
-			.service-card p { color: var(--text-dim); font-size: 0.95rem; margin-bottom: 2rem; }
+			.service-card h3 { font-size: 1.5rem; margin-bottom: 0.75rem; color: #020617; font-weight: 800; }
+			.service-card .tagline { color: var(--accent); font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 1rem; display: block; }
+			.service-card p { color: var(--text-dim); font-size: 0.95rem; margin-bottom: 2rem; min-height: 4.5rem; }
 			.feature-list { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--border); padding-top: 1.5rem; }
-			.feature-list li { font-size: 0.875rem; color: var(--text-main); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem; }
-			.feature-list li::before { content: "✓"; color: var(--accent); font-weight: 900; }
+			.feature-list li { font-size: 0.875rem; color: var(--text-main); margin-bottom: 0.65rem; display: flex; align-items: center; gap: 0.5rem; font-weight: 500; }
+			.feature-list li::before { content: "→"; color: var(--accent); font-weight: 900; }
 
 			/* Leadership */
-			.leaders-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-			.leader-card { background: var(--surface); border-radius: 24px; border: 1px solid var(--border); overflow: hidden; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05); }
-			.leader-img { width: 100%; height: 300px; object-fit: cover; filter: grayscale(100%) brightness(0.9); transition: 0.5s ease; }
-			.leader-card:hover .leader-img { filter: grayscale(0%) brightness(1); }
-			.leader-info { padding: 2rem; }
-			.leader-info h4 { font-size: 1.5rem; margin-bottom: 0.25rem; color: #020617; }
-			.leader-info span { color: var(--accent); font-weight: 600; display: block; margin-bottom: 1.5rem; }
-			.leader-info p { font-size: 0.875rem; color: var(--text-dim); }
+			.leaders-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; }
+			.leader-card { background: var(--surface); border-radius: 28px; border: 1px solid var(--border); overflow: hidden; box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.03); }
+			.leader-img { width: 100%; height: 320px; object-fit: cover; filter: grayscale(100%) brightness(0.95); transition: 0.6s cubic-bezier(0.4, 0, 0.2, 1); }
+			.leader-card:hover .leader-img { filter: grayscale(0%) brightness(1); transform: scale(1.05); }
+			.leader-info { padding: 2.5rem; }
+			.leader-info h4 { font-size: 1.65rem; margin-bottom: 0.25rem; color: #020617; font-weight: 800; }
+			.leader-info span { color: var(--accent); font-weight: 700; font-size: 0.9rem; display: block; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 0.5px; }
+			.leader-info p { font-size: 0.9rem; color: var(--text-dim); line-height: 1.7; }
 
 			/* Global Presence */
-			.offices { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 4rem; }
-			.office h4 { font-size: 1.25rem; margin-bottom: 1rem; border-left: 3px solid var(--accent); padding-left: 1rem; color: #020617; }
-			.office p { color: var(--text-dim); font-size: 0.9rem; white-space: pre-line; }
+			.offices { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 3rem; }
+			.office { background: #fff; padding: 3rem; border-radius: 24px; border: 1px solid var(--border); }
+			.office h4 { font-size: 1.35rem; margin-bottom: 1.5rem; font-weight: 800; color: #020617; border-bottom: 2px solid var(--accent); width: fit-content; padding-bottom: 0.5rem; }
+			.office p { color: var(--text-dim); font-size: 1rem; white-space: pre-line; margin-bottom: 1.5rem; }
+			.office a { font-weight: 700; font-size: 0.9rem; }
 
 			/* Footer */
-			footer { padding: 4rem 0; border-top: 1px solid var(--border); }
+			footer { padding: 5rem 0; border-top: 1px solid var(--border); background: #fff; }
 			.footer-flex { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 2rem; }
 			.copyright { color: var(--text-dim); font-size: 0.875rem; }
 
 			@media (max-width: 768px) {
 				nav { display: none; }
+				header { padding: 1rem 1.5rem; }
 				.hero { padding: 6rem 0; }
 				.btn-outline { margin: 1rem 0 0; display: block; width: fit-content; }
+				.services-grid { grid-template-columns: 1fr; }
 			}
 		</style>
 	</head>
 	<body>
-		<div class="container">
-			<header>
-				<div class="logo">SYSGREY_</div>
-				<nav>
-					<a href="#solutions">Solutions</a>
-					<a href="#leadership">Leadership</a>
-					<a href="#global">Global</a>
-					<a href="#contact">Contact</a>
-				</nav>
-			</header>
+		<header>
+			<div class="logo">SYSGREY TECHNOLOGIES</div>
+			<nav>
+				<a href="#solutions">Solutions</a>
+				<a href="#leadership">Leadership</a>
+				<a href="#global">Presence</a>
+				<a href="#contact">Contact</a>
+			</nav>
+		</header>
 
+		<div class="container">
 			<main>
 				<section class="hero">
 					<div class="hero-content">
+						<span style="color: var(--accent); font-weight: 800; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1rem; display: block;">Bridging the Niche Skill Gap</span>
 						<h1><span class="gradient-text">Enterprise Software</span><br/>Modernized.</h1>
-						<p>We bridge the niche skill gap for global enterprises through high-impact Microsoft Dynamics 365, Data Analytics, and Cloud Solutions.</p>
+						<p>Technology and business process consulting specializing in complex solution implementations that transform global businesses through Dynamics 365, SharePoint, and BI Intelligence.</p>
 						<div class="actions">
-							<a href="#contact" class="btn">Request Consultation</a>
-							<a href="#solutions" class="btn btn-outline">Explore Solutions</a>
+							<a href="#contact" class="btn">Request a Consultation</a>
+							<a href="#solutions" class="btn btn-outline">Our Core Pillars</a>
 						</div>
 					</div>
 				</section>
 
 				<section id="solutions">
 					<div class="section-header">
-						<span class="tagline" style="color: var(--accent); font-weight: 700; text-transform: uppercase;">Our Core Pillars</span>
-						<h2>Strategic Niche Expertise</h2>
+						<h2>Strategic Solutions</h2>
+						<p>Efficient, cost-effective, and agile solutions designed to respond quickly to the dynamic nature of your business.</p>
 					</div>
 					<div class="services-grid">
 						{services.map(s => (
@@ -217,8 +242,8 @@ const leaders = [
 
 				<section id="leadership">
 					<div class="section-header">
-						<span class="tagline" style="color: var(--accent); font-weight: 700; text-transform: uppercase;">Our Founders</span>
-						<h2>Experience at the Helm</h2>
+						<h2>Executive Leadership</h2>
+						<p>Highly qualified resources specializing in Microsoft ecosystem, Cloud & DevOps, AI/ML, and Full-stack development.</p>
 					</div>
 					<div class="leaders-grid">
 						{leaders.map(l => (
@@ -236,25 +261,23 @@ const leaders = [
 
 				<section id="global">
 					<div class="section-header">
-						<h2>Global Presence</h2>
-						<p>Serving enterprise clients from our strategic hubs.</p>
+						<h2>Global Hubs</h2>
+						<p>Connecting expertise across Singapore and India to build impactful software together.</p>
 					</div>
 					<div class="offices">
-						<div class="office">
+						<div class="office shadow-sm">
 							<h4>Singapore</h4>
 							<p>1 North Bridge Road #18-03
 							High Street Center
-							Singapore - 179094
-							
-							alok.kumar@sysgreytech.com</p>
+							Singapore - 179094</p>
+							<a href="mailto:alok.kumar@sysgreytech.com">alok.kumar@sysgreytech.com</a>
 						</div>
-						<div class="office">
+						<div class="office shadow-sm">
 							<h4>India</h4>
 							<p>Unit No 604, Artha Mart
 							TechZone 4, Greater Noida West
-							Uttar Pradesh - 201318
-							
-							anubhav.singh@sysgreytech.com</p>
+							Uttar Pradesh - 201318</p>
+							<a href="mailto:anubhav.singh@sysgreytech.com">anubhav.singh@sysgreytech.com</a>
 						</div>
 					</div>
 				</section>
@@ -262,7 +285,7 @@ const leaders = [
 
 			<footer>
 				<div class="footer-flex">
-					<div class="logo">SYSGREY_</div>
+					<div class="logo" style="font-size: 1rem;">SYSGREY_</div>
 					<div class="copyright">© 2026 Sysgrey Technologies. All Rights Reserved.</div>
 				</div>
 			</footer>
