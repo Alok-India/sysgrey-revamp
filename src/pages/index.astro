@@ -74,6 +74,15 @@ const leaders = [
     img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=400"
   }
 ];
+
+const clients = [
+  { name: "Education Sector", icon: "🎓" },
+  { name: "Banking & Finance", icon: "🏦" },
+  { name: "Manufacturing", icon: "🏭" },
+  { name: "Retail & IT", icon: "💻" },
+  { name: "Healthcare", icon: "🏥" },
+  { name: "Sales & CRM", icon: "📈" }
+];
 ---
 
 <html lang="en" class="scroll-smooth">
@@ -103,7 +112,6 @@ const leaders = [
 				font-family: 'Geist', sans-serif;
 				line-height: 1.6;
 			}
-			.full-width { width: 100%; }
 			.container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
 			
 			/* Header - FULL WIDTH */
@@ -174,17 +182,43 @@ const leaders = [
 			.leader-info span { color: var(--accent); font-weight: 700; font-size: 0.9rem; display: block; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 0.5px; }
 			.leader-info p { font-size: 0.9rem; color: var(--text-dim); line-height: 1.7; }
 
+			/* Clients */
+			.clients-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 2rem; }
+			.client-item { 
+				background: #fff; border: 1px solid var(--border); border-radius: 16px; padding: 2rem; 
+				text-align: center; font-weight: 700; color: var(--text-dim); transition: all 0.3s;
+			}
+			.client-item:hover { transform: scale(1.05); color: var(--accent); border-color: var(--accent); }
+			.client-icon { font-size: 2rem; display: block; margin-bottom: 0.5rem; }
+
 			/* Global Presence */
 			.offices { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 3rem; }
 			.office { background: #fff; padding: 3rem; border-radius: 24px; border: 1px solid var(--border); }
 			.office h4 { font-size: 1.35rem; margin-bottom: 1.5rem; font-weight: 800; color: #020617; border-bottom: 2px solid var(--accent); width: fit-content; padding-bottom: 0.5rem; }
 			.office p { color: var(--text-dim); font-size: 1rem; white-space: pre-line; margin-bottom: 1.5rem; }
-			.office a { font-weight: 700; font-size: 0.9rem; }
+			.office a { font-weight: 700; font-size: 0.9rem; color: var(--accent); text-decoration: none; }
 
-			/* Footer */
-			footer { padding: 5rem 0; border-top: 1px solid var(--border); background: #fff; }
-			.footer-flex { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 2rem; }
-			.copyright { color: var(--text-dim); font-size: 0.875rem; }
+			/* Contact Form */
+			.contact-card { background: #020617; color: #fff; padding: 5rem; border-radius: 40px; display: grid; lg:grid-cols-2 gap: 4rem; align-items: center; }
+			.contact-info h2 { font-size: 3rem; font-weight: 900; line-height: 1.1; margin-bottom: 1.5rem; }
+			.contact-info p { color: #94a3b8; font-size: 1.125rem; }
+			.form-group { margin-bottom: 1.5rem; }
+			.form-group label { display: block; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; margin-bottom: 0.5rem; color: #64748b; }
+			.form-group input, .form-group textarea { 
+				width: 100%; background: #0f172a; border: 1px solid #1e293b; border-radius: 12px; padding: 1rem; 
+				color: #fff; font-family: inherit; font-size: 1rem; outline: none; transition: border-color 0.2s;
+			}
+			.form-group input:focus, .form-group textarea:focus { border-color: var(--accent); }
+			.submit-btn { 
+				width: 100%; background: var(--accent); color: #fff; padding: 1.25rem; border-radius: 12px; 
+				font-weight: 800; border: none; cursor: pointer; transition: 0.2s; 
+			}
+			.submit-btn:hover { background: #fff; color: #020617; }
+
+			/* Footer - FULL WIDTH */
+			footer { width: 100%; padding: 2rem 3rem; border-top: 1px solid var(--border); background: #fff; box-sizing: border-box; }
+			.footer-flex { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+			.copyright { color: var(--text-dim); font-size: 0.8rem; }
 
 			@media (max-width: 768px) {
 				nav { display: none; }
@@ -192,6 +226,7 @@ const leaders = [
 				.hero { padding: 6rem 0; }
 				.btn-outline { margin: 1rem 0 0; display: block; width: fit-content; }
 				.services-grid { grid-template-columns: 1fr; }
+				.contact-card { padding: 3rem 2rem; border-radius: 24px; }
 			}
 		</style>
 	</head>
@@ -201,7 +236,7 @@ const leaders = [
 			<nav>
 				<a href="#solutions">Solutions</a>
 				<a href="#leadership">Leadership</a>
-				<a href="#global">Presence</a>
+				<a href="#clients">Clients</a>
 				<a href="#contact">Contact</a>
 			</nav>
 		</header>
@@ -227,7 +262,7 @@ const leaders = [
 					</div>
 					<div class="services-grid">
 						{services.map(s => (
-							<div class="service-card">
+							<div class="service-card shadow-sm">
 								<span class="icon">{s.icon}</span>
 								<span class="tagline">{s.tagline}</span>
 								<h3>{s.name}</h3>
@@ -247,7 +282,7 @@ const leaders = [
 					</div>
 					<div class="leaders-grid">
 						{leaders.map(l => (
-							<div class="leader-card">
+							<div class="leader-card shadow-sm">
 								<img src={l.img} alt={l.name} class="leader-img" />
 								<div class="leader-info">
 									<h4>{l.name}</h4>
@@ -259,10 +294,54 @@ const leaders = [
 					</div>
 				</section>
 
-				<section id="global">
+				<section id="clients">
+					<div class="section-header text-center" style="margin-bottom: 4rem;">
+						<h2 style="margin: 0 auto;">Trusted Expertise</h2>
+						<p style="margin: 1rem auto;">Providing customized solutions across global industries and sectors.</p>
+					</div>
+					<div class="clients-grid">
+						{clients.map(c => (
+							<div class="client-item shadow-sm">
+								<span class="client-icon">{c.icon}</span>
+								{c.name}
+							</div>
+						))}
+					</div>
+				</section>
+
+				<section id="contact">
+					<div class="contact-card shadow-2xl">
+						<div class="contact-info">
+							<h2>Ready to build impactful software?</h2>
+							<p>Let's work together to transform your business goals into digital reality. Our experts are ready to advise and guide you.</p>
+							<div style="margin-top: 3rem;">
+								<a href="mailto:info@sysgreytech.com" class="logo" style="text-decoration: none; color: #fff;">info@sysgreytech.com</a>
+							</div>
+						</div>
+						<div class="contact-form">
+							<form action="mailto:info@sysgreytech.com" method="post" enctype="text/plain">
+								<div class="form-group">
+									<label>Full Name</label>
+									<input type="text" name="name" placeholder="John Doe" required />
+								</div>
+								<div class="form-group">
+									<label>Company Email</label>
+									<input type="email" name="email" placeholder="john@company.com" required />
+								</div>
+								<div class="form-group">
+									<label>Project Details</label>
+									<textarea name="message" rows="4" placeholder="How can we help?"></textarea>
+								</div>
+								<button type="submit" class="submit-btn">Send Message</button>
+							</form>
+						</div>
+					</div>
+				</section>
+
+				<section id="global" style="padding-bottom: 4rem;">
 					<div class="section-header">
 						<h2>Global Hubs</h2>
-						<p>Connecting expertise across Singapore and India to build impactful software together.</p>
+						<p>Serving enterprise clients from our strategic centers in Singapore and India.</p>
 					</div>
 					<div class="offices">
 						<div class="office shadow-sm">
@@ -282,13 +361,13 @@ const leaders = [
 					</div>
 				</section>
 			</main>
-
-			<footer>
-				<div class="footer-flex">
-					<div class="logo" style="font-size: 1rem;">SYSGREY_</div>
-					<div class="copyright">© 2026 Sysgrey Technologies. All Rights Reserved.</div>
-				</div>
-			</footer>
 		</div>
+
+		<footer>
+			<div class="footer-flex">
+				<div class="logo" style="font-size: 1rem;">SYSGREY_</div>
+				<div class="copyright">© 2026 Sysgrey Technologies. All Rights Reserved.</div>
+			</div>
+		</footer>
 	</body>
 </html>
