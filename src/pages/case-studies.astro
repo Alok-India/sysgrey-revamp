@@ -1,0 +1,538 @@
+---
+// Case Studies Page - Sysgrey Technologies
+const title = "Case Studies | Real-World Success Stories | Sysgrey Technologies";
+const description = "Explore how Sysgrey has delivered proven results with D365, AI automation, and digital transformation projects across multiple industries.";
+
+const caseStudies = [
+  {
+    id: 1,
+    title: "Manufacturer Saves 40% in Procurement Processing with D365 F&O + RPA",
+    industry: "Manufacturing & Logistics",
+    impact: "40% Cost Reduction",
+    challenge: [
+      "Manual purchase order processing — 50+ orders daily across 3 legacy ERPs",
+      "Data silos — Vendor master, pricing, inventory scattered across spreadsheets",
+      "Slow cycle time — 7-10 days from PO creation to payment authorization",
+      "High error rates — 8-12% duplicate orders and pricing mismatches monthly",
+      "Compliance gaps — Audit trail incomplete, no real-time visibility"
+    ],
+    solution: [
+      { phase: "Phase 1: D365 F&O Implementation (12 weeks)", items: ["Centralized procurement module with 3-plant configuration", "Master data governance for vendors, items, pricing", "Integrated GL, AP, and budget controls", "Real-time inventory visibility across locations"] },
+      { phase: "Phase 2: AI + RPA Layer (8 weeks)", items: ["Copilot for Procurement: Intelligent PO suggestions", "Power Automate Workflows: Auto-approval of routine orders", "Document AI: Auto-extraction of vendor quotes, invoices", "Predictive Analytics: Supplier performance scoring"] },
+      { phase: "Phase 3: Analytics & Optimization (6 weeks)", items: ["Power BI procurement dashboard (spend analysis)", "Automated variance reports for cost overruns", "User training & change management"] }
+    ],
+    results: [
+      { number: "40%", label: "Cost Reduction", detail: "₹1.2 cr annual savings" },
+      { number: "3 days", label: "PO Cycle Time", detail: "From 7-10 days to 2-3 days" },
+      { number: "95%", label: "Error Reduction", detail: "Duplicates & mismatches eliminated" },
+      { number: "12 FTE", label: "Headcount Optimization", detail: "Redeployed to strategic sourcing" }
+    ],
+    roi: "14 months payback period",
+    quote: "Sysgrey didn't just implement a system—they transformed how we procure. The AI layer is handling 70% of our routine PO processing now. Our team focuses on strategy instead of data entry.",
+    quoteAttr: "Procurement Director, Fortune 500 Manufacturing",
+    techStack: ["Dynamics 365 Finance & Operations", "Power Automate", "Copilot AI", "Azure Document Intelligence", "Power BI"]
+  },
+  {
+    id: 2,
+    title: "IT Services Firm Achieves 35% Sales Productivity Boost with D365 Sales + Copilot",
+    industry: "IT Services & Consulting",
+    impact: "35% Productivity Increase",
+    challenge: [
+      "Fragmented sales process — Teams using personal spreadsheets and multiple tools",
+      "Poor deal visibility — No real pipeline management, leadership blind to deal status",
+      "Long deal cycles — 6-8 months average, high deal slippage",
+      "Data quality issues — Stale opportunities, incomplete contact records",
+      "Missed automation — Manual quote generation, email follow-ups"
+    ],
+    solution: [
+      { phase: "Foundation: D365 Sales Cloud", items: ["Unified opportunity & account management", "Sales process automation with stage gates", "Quote & contract generation", "Territory management across regions"] },
+      { phase: "AI Layer: Copilot + Power Automate", items: ["Copilot for Sales: Meeting recaps, deal scoring", "Predictive Lead Scoring: AI identifies high-value opportunities", "Auto-generated Summaries: Meeting notes from Teams", "Smart Follow-up Workflows: Automated reminders and sequences", "Proposal Automation: Dynamic quote generation"] },
+      { phase: "Intelligence: Power BI Sales Analytics", items: ["Real-time pipeline dashboards for managers", "Win/loss analysis by product and region", "Sales rep performance tracking & coaching"] }
+    ],
+    results: [
+      { number: "35%", label: "Sales Productivity", detail: "More deals per rep" },
+      { number: "2 months", label: "Sales Cycle Reduction", detail: "8 months to 6 months" },
+      { number: "28%", label: "Forecast Accuracy", detail: "65% to 93% improvement" },
+      { number: "4 hrs/week", label: "Time Saved Per Rep", detail: "From admin tasks" }
+    ],
+    roi: "9 months payback period",
+    quote: "The sales team immediately saw the value. Copilot is giving them insights during the deal that would have taken hours to gather before.",
+    quoteAttr: "VP Sales, IT Services Company",
+    techStack: ["Dynamics 365 Sales Cloud", "Copilot for Sales", "Power Automate", "Power BI", "Microsoft Teams"]
+  },
+  {
+    id: 3,
+    title: "Financial Services Achieves 95% Invoice Accuracy with AI Document Processing",
+    industry: "Financial Services",
+    impact: "95% Invoice Accuracy",
+    challenge: [
+      "50,000+ invoices monthly requiring manual data entry",
+      "High error rate — Duplicate processing, missed discounts",
+      "Slow processing — 5-7 day average invoice-to-pay cycle",
+      "Compliance risk — Incomplete audit trail, reconciliation delays",
+      "Staff burnout — Repetitive manual data entry on team"
+    ],
+    solution: [
+      { phase: "Document Intelligence Setup", items: ["Azure Document Intelligence for invoice extraction", "Custom model training on historical invoices", "OCR with 99%+ accuracy on text recognition", "Automated validation rules for data quality"] },
+      { phase: "D365 F&O Integration", items: ["Automated three-way matching (PO, Invoice, Receipt)", "Exception handling for non-standard invoices", "Duplicate detection and prevention", "Real-time posting to general ledger"] },
+      { phase: "Analytics & Continuous Improvement", items: ["Power BI dashboard tracking processing metrics", "Monthly accuracy reports and trend analysis", "Vendor scorecards for payment terms optimization"] }
+    ],
+    results: [
+      { number: "95%", label: "Accuracy Rate", detail: "Up from 78%" },
+      { number: "24 hrs", label: "Processing Time", detail: "From 5-7 days" },
+      { number: "₹1.8 Cr", label: "Annual Savings", detail: "Staff redeployment + efficiency" },
+      { number: "100%", label: "Audit Trail", detail: "Complete compliance" }
+    ],
+    roi: "11 months payback period",
+    quote: "The accuracy improvements alone justified the investment. We're now processing invoices at a fraction of the previous cost and with zero compliance gaps.",
+    quoteAttr: "Finance Director, Financial Services Firm",
+    techStack: ["Azure Document Intelligence", "Dynamics 365 Finance & Operations", "Power Automate", "Power BI"]
+  },
+  {
+    id: 4,
+    title: "E-Commerce Platform Optimizes Inventory with AI Forecasting & Business Central",
+    industry: "E-Commerce & Retail",
+    impact: "22% Inventory Cost Reduction",
+    challenge: [
+      "Manual demand forecasting — Based on gut feel and spreadsheets",
+      "High stockouts — Missing 12-15% of sales opportunities monthly",
+      "Overstock issues — Excess inventory tying up ₹5+ crore in cash",
+      "No real-time visibility — Inventory data scattered across channels",
+      "Inefficient reordering — Lead time variability causing disruptions"
+    ],
+    solution: [
+      { phase: "Business Central Deployment", items: ["Unified inventory management across all channels", "Real-time stock visibility on web and POS", "Automated reordering based on min/max thresholds", "Channel integration (Amazon, Shopify, own website)"] },
+      { phase: "AI-Powered Forecasting", items: ["Azure ML demand forecasting model", "Historical sales pattern analysis (2+ years)", "Seasonal adjustments and trend detection", "Predictive inventory recommendations"] },
+      { phase: "Optimization & Monitoring", items: ["Power BI inventory dashboard with KPIs", "Automated alerts for slow-moving and excess stock", "Supplier collaboration portal for visibility"] }
+    ],
+    results: [
+      { number: "22%", label: "Inventory Cost Reduction", detail: "₹1.1 cr annual savings" },
+      { number: "8%", label: "Revenue Increase", detail: "From reduced stockouts" },
+      { number: "3.2x", label: "Inventory Turnover", detail: "Improvement in 6 months" },
+      { number: "40 hrs", label: "Weekly Admin Saved", detail: "From manual forecasting" }
+    ],
+    roi: "13 months payback period",
+    quote: "The AI forecasting is remarkably accurate. We've cut stockouts by 75% and freed up millions in working capital that was stuck in overstock.",
+    quoteAttr: "Operations Manager, E-Commerce Platform",
+    techStack: ["Dynamics 365 Business Central", "Azure Machine Learning", "Power Automate", "Power BI", "Azure Integration Services"]
+  }
+];
+
+const whyChooseUs = [
+  {
+    title: "Microsoft Gold Partner Expertise",
+    description: "Trusted by enterprises across APAC region with deep expertise in D365, Power Platform, and Azure.",
+    icon: "🏆"
+  },
+  {
+    title: "AI-First Approach",
+    description: "We don't just implement; we automate. Copilot, RPA, and intelligent workflows are built-in from day one.",
+    icon: "🤖"
+  },
+  {
+    title: "Fast Time-to-Value",
+    description: "Accelerated implementations, phased rollouts, and quick wins to demonstrate ROI early.",
+    icon: "⚡"
+  }
+];
+---
+
+<html lang="en" class="scroll-smooth">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/png" href="/sysgrey-revamp/favicon.png" />
+		<meta name="viewport" content="width=device-width" />
+		<title>{title}</title>
+		<meta name="description" content={description} />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+		<style>
+			:root {
+				--bg: #f8fafc;
+				--surface: #ffffff;
+				--accent: #0284c7;
+				--accent-dark: #0369a1;
+				--text-main: #0f172a;
+				--text-dim: #475569;
+				--border: #e2e8f0;
+			}
+			body {
+				margin: 0;
+				background-color: var(--bg);
+				color: var(--text-main);
+				font-family: 'Geist', sans-serif;
+				line-height: 1.6;
+			}
+			.full-width { width: 100%; }
+			.container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+			
+			/* Header */
+			header {
+				width: 100%;
+				padding: 0.5rem 2rem;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				position: sticky;
+				top: 0;
+				background: rgba(255, 255, 255, 0.95);
+				backdrop-filter: blur(12px);
+				z-index: 100;
+				border-bottom: 1px solid var(--border);
+				box-sizing: border-box;
+			}
+			.header-logo { height: 60px; width: auto; display: block; }
+			nav { display: flex; gap: 2rem; }
+			nav a { color: var(--text-dim); text-decoration: none; font-size: 0.875rem; font-weight: 600; transition: color 0.2s; }
+			nav a:hover { color: var(--accent); }
+
+			/* Hero Section */
+			.hero { padding: 6rem 0 3rem; position: relative; overflow: hidden; }
+			.hero-content { max-width: 900px; }
+			.hero h1 { font-size: clamp(2.5rem, 6vw, 4rem); font-weight: 900; line-height: 1.05; letter-spacing: -2px; margin-bottom: 1.5rem; }
+			.hero p { font-size: 1.1rem; color: var(--text-dim); max-width: 700px; margin-bottom: 2rem; }
+
+			/* Sections */
+			section { padding: 4rem 0; }
+			.section-header { margin-bottom: 3rem; }
+			.section-header h2 { font-size: 2.75rem; font-weight: 800; letter-spacing: -1.5px; color: #020617; margin-bottom: 1rem; }
+			.section-header p { color: var(--text-dim); font-size: 1.125rem; max-width: 700px; }
+
+			/* Case Study Cards */
+			.case-study-card {
+				background: var(--surface);
+				padding: 3rem;
+				border-radius: 24px;
+				border: 1px solid var(--border);
+				border-left: 5px solid var(--accent);
+				margin-bottom: 3rem;
+				box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+				transition: all 0.3s ease;
+			}
+			.case-study-card:hover {
+				transform: translateY(-5px);
+				box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+			}
+			.case-study-header {
+				margin-bottom: 2rem;
+			}
+			.case-study-header h3 {
+				font-size: 1.75rem;
+				font-weight: 800;
+				color: #020617;
+				margin-bottom: 1rem;
+				line-height: 1.3;
+			}
+			.case-meta {
+				display: flex;
+				gap: 1rem;
+				flex-wrap: wrap;
+			}
+			.meta-badge {
+				background: #e0f2fe;
+				color: var(--accent);
+				padding: 0.5rem 1.25rem;
+				border-radius: 20px;
+				font-size: 0.875rem;
+				font-weight: 700;
+			}
+
+			/* Challenge, Solution, Results Boxes */
+			.content-box {
+				margin: 2rem 0;
+				padding: 2rem;
+				border-radius: 16px;
+			}
+			.challenge-box { background: #fffbeb; border-left: 4px solid #f59e0b; }
+			.solution-box { background: #ecfdf5; border-left: 4px solid #10b981; }
+			.results-box { background: #f0fdf4; border-left: 4px solid #22c55e; }
+			.content-box h4 { font-size: 1.25rem; font-weight: 800; color: #020617; margin-bottom: 1.5rem; }
+			.content-box ul { list-style: none; padding: 0; }
+			.content-box li {
+				margin-bottom: 0.75rem;
+				color: var(--text-main);
+				padding-left: 1.5rem;
+				position: relative;
+			}
+			.content-box li::before {
+				content: "→";
+				position: absolute;
+				left: 0;
+				color: var(--accent);
+				font-weight: 900;
+			}
+
+			/* Results Grid */
+			.results-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+				gap: 1.5rem;
+				margin: 2rem 0;
+			}
+			.result-item {
+				background: #fff;
+				padding: 2rem;
+				border-radius: 12px;
+				text-align: center;
+				border: 2px solid #10b981;
+			}
+			.result-number {
+				font-size: 2.5rem;
+				font-weight: 900;
+				color: var(--accent);
+				margin-bottom: 0.5rem;
+				display: block;
+			}
+			.result-label {
+				font-weight: 800;
+				color: #020617;
+				font-size: 1rem;
+				margin-bottom: 0.5rem;
+				display: block;
+			}
+			.result-detail {
+				font-size: 0.875rem;
+				color: var(--text-dim);
+			}
+
+			/* Quote */
+			.quote-box {
+				background: #f8fafc;
+				padding: 2.5rem;
+				border-radius: 16px;
+				border-left: 4px solid var(--accent);
+				margin: 2.5rem 0;
+				font-style: italic;
+				color: var(--text-main);
+				line-height: 1.8;
+			}
+			.quote-attr {
+				text-align: right;
+				font-weight: 700;
+				color: #020617;
+				font-style: normal;
+				margin-top: 1.5rem;
+				font-size: 0.9rem;
+			}
+
+			/* Tech Stack */
+			.tech-stack {
+				margin: 2rem 0;
+				padding: 1.5rem;
+				background: #f0f9ff;
+				border-radius: 12px;
+			}
+			.tech-stack h5 {
+				font-weight: 800;
+				color: #020617;
+				margin-bottom: 1rem;
+				font-size: 1rem;
+			}
+			.tech-items {
+				display: flex;
+				gap: 1rem;
+				flex-wrap: wrap;
+			}
+			.tech-item {
+				background: #fff;
+				padding: 0.75rem 1.25rem;
+				border-radius: 20px;
+				border: 1px solid var(--accent);
+				color: var(--accent);
+				font-size: 0.85rem;
+				font-weight: 600;
+			}
+
+			/* Why Choose Us */
+			.why-us-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+				gap: 2rem;
+				margin-top: 3rem;
+			}
+			.why-us-item {
+				background: var(--surface);
+				padding: 2.5rem;
+				border-radius: 20px;
+				border: 1px solid var(--border);
+				text-align: center;
+				transition: all 0.3s ease;
+			}
+			.why-us-item:hover {
+				transform: translateY(-8px);
+				border-color: var(--accent);
+				box-shadow: 0 15px 30px rgba(2, 132, 199, 0.1);
+			}
+			.why-us-icon {
+				font-size: 2.5rem;
+				margin-bottom: 1rem;
+				display: block;
+			}
+			.why-us-item h4 {
+				font-size: 1.35rem;
+				font-weight: 800;
+				color: #020617;
+				margin-bottom: 1rem;
+			}
+			.why-us-item p {
+				color: var(--text-dim);
+				line-height: 1.7;
+			}
+
+			/* Footer */
+			footer {
+				width: 100%;
+				padding: 1.5rem 3rem;
+				border-top: 1px solid var(--border);
+				background: #fff;
+				box-sizing: border-box;
+			}
+			.footer-flex {
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				flex-wrap: wrap;
+				gap: 1rem;
+				max-width: 1200px;
+				margin: 0 auto;
+			}
+			.footer-logo { height: 30px; width: auto; opacity: 0.8; }
+			.copyright { color: var(--text-dim); font-size: 0.8rem; }
+			
+			/* Buttons */
+			.btn {
+				display: inline-block;
+				padding: 0.875rem 2rem;
+				background: var(--accent);
+				color: #fff;
+				border-radius: 12px;
+				text-decoration: none;
+				font-weight: 700;
+				transition: all 0.3s;
+				margin-top: 1.5rem;
+			}
+			.btn:hover {
+				background: #020617;
+				transform: translateY(-2px);
+			}
+
+			@media (max-width: 768px) {
+				header { padding: 1rem 1.5rem; }
+				nav { display: none; }
+				section { padding: 3rem 0; }
+				.hero { padding: 4rem 0 2rem; }
+				.case-study-card { padding: 2rem; }
+				.results-grid { grid-template-columns: repeat(2, 1fr); }
+				.why-us-grid { grid-template-columns: 1fr; }
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<img src="/sysgrey-revamp/sysgrey-logo.png" alt="Sysgrey Technologies" class="header-logo" />
+			<nav>
+				<a href="/">Home</a>
+				<a href="/#solutions">Solutions</a>
+				<a href="/#leadership">Leadership</a>
+				<a href="/#contact">Contact</a>
+			</nav>
+		</header>
+
+		<div class="container">
+			<main>
+				<section class="hero">
+					<div class="hero-content">
+						<h1>Real-World AI + D365 Success</h1>
+						<p>Explore how Sysgrey has delivered proven results with Dynamics 365, AI automation, and digital transformation projects across multiple industries.</p>
+						<a href="/#contact" class="btn">Start Your Transformation</a>
+					</div>
+				</section>
+
+				<section>
+					{caseStudies.map(cs => (
+						<div class="case-study-card">
+							<div class="case-study-header">
+								<h3>{cs.title}</h3>
+								<div class="case-meta">
+									<span class="meta-badge">{cs.industry}</span>
+									<span class="meta-badge">{cs.impact}</span>
+								</div>
+							</div>
+
+							<div class="content-box challenge-box">
+								<h4>The Challenge</h4>
+								<ul>
+									{cs.challenge.map(item => <li>{item}</li>)}
+								</ul>
+							</div>
+
+							<div class="content-box solution-box">
+								<h4>Our Solution</h4>
+								{cs.solution.map(phase => (
+									<div style="margin-bottom: 1.5rem;">
+										<h5 style="margin: 0 0 1rem 0; color: #020617; font-weight: 700;">{phase.phase}</h5>
+										<ul>
+											{phase.items.map(item => <li>{item}</li>)}
+										</ul>
+									</div>
+								))}
+							</div>
+
+							<div class="content-box results-box">
+								<h4>Results Delivered</h4>
+								<div class="results-grid">
+									{cs.results.map(result => (
+										<div class="result-item">
+											<span class="result-number">{result.number}</span>
+											<span class="result-label">{result.label}</span>
+											<div class="result-detail">{result.detail}</div>
+										</div>
+									))}
+								</div>
+								<div style="text-align: center; margin-top: 1.5rem; font-weight: 700; color: #020617;">
+									ROI Timeline: {cs.roi}
+								</div>
+							</div>
+
+							<div class="quote-box">
+								"{cs.quote}"
+								<div class="quote-attr">— {cs.quoteAttr}</div>
+							</div>
+
+							<div class="tech-stack">
+								<h5>Technology Stack</h5>
+								<div class="tech-items">
+									{cs.techStack.map(tech => <span class="tech-item">{tech}</span>)}
+								</div>
+							</div>
+						</div>
+					))}
+				</section>
+
+				<section>
+					<div class="section-header">
+						<h2>Why Choose Sysgrey?</h2>
+						<p>Partner with experts who combine deep Microsoft expertise with proven AI automation strategies.</p>
+					</div>
+					<div class="why-us-grid">
+						{whyChooseUs.map(item => (
+							<div class="why-us-item">
+								<span class="why-us-icon">{item.icon}</span>
+								<h4>{item.title}</h4>
+								<p>{item.description}</p>
+							</div>
+						))}
+					</div>
+				</section>
+			</main>
+		</div>
+
+		<footer>
+			<div class="footer-flex">
+				<img src="/sysgrey-revamp/sysgrey-logo.png" alt="Sysgrey" class="footer-logo" />
+				<div class="copyright">© 2026 Sysgrey Technologies. All Rights Reserved.</div>
+			</div>
+		</footer>
+	</body>
+</html>
