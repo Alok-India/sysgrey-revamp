@@ -240,8 +240,7 @@ const clients = [
 			<img src="/sysgrey-revamp/sysgrey-logo.png" alt="Sysgrey Technologies" class="header-logo" />
 			<nav>
 				<a href="#solutions">Solutions</a>
-				<a href="/case-studies">Case Studies</a>
-				<a href="/case-studies">Case Studies</a>
+				<a href="/case-studies/">Case Studies</a>
 				<a href="#leadership">Leadership</a>
 				<a href="#clients">Clients</a>
 				<a href="#global">Contact</a>
@@ -275,14 +274,43 @@ const clients = [
 								<h3>{s.name}</h3>
 								<p>{s.desc}</p>
 								<ul class="feature-list">
-									{s.features.map(f => <li>{f}</li>)}
-								</ul>
+									{s.features.map(f => <li>{f}</li>)}</ul>
+						<a href="/case-studies/" style="color: var(--accent); text-decoration: none; font-weight: 700; font-size: 0.9rem; display: inline-block; margin-top: 1.5rem;">See Case Studies →</a>
 							</div>
 						))}
 					</div>
 				</section>
 
-				<section id="leadership">
+				
+			<section style="background: linear-gradient(135deg, #f0f9ff 0%, #ecfdf5 100%); border-radius: 24px; padding: 4rem 3rem; margin: 2rem 0;">
+				<div class="section-header">
+					<h2>Why Choose Sysgrey?</h2>
+					<p>Partner with experts who combine deep Microsoft expertise with proven AI automation strategies.</p>
+				</div>
+				<div class="services-grid">
+					<div class="service-card shadow-sm">
+						<span class="icon">🏆</span>
+						<h3>Microsoft Gold Partner Expertise</h3>
+						<p>Trusted by enterprises across APAC region with deep expertise in D365, Power Platform, and Azure.</p>
+					</div>
+					<div class="service-card shadow-sm">
+						<span class="icon">🤖</span>
+						<h3>AI-First Approach</h3>
+						<p>We don't just implement; we automate. Copilot, RPA, and intelligent workflows are built-in from day one.</p>
+					</div>
+					<div class="service-card shadow-sm">
+						<span class="icon">⚡</span>
+						<h3>Fast Time-to-Value</h3>
+						<p>Accelerated implementations, phased rollouts, and quick wins to demonstrate ROI early.</p>
+					</div>
+				</div>
+				<div style="text-align: center; margin-top: 2rem;">
+					<a href="/case-studies/" class="btn" style="background: #020617; margin: 0;">Explore Our Success Stories</a>
+				</div>
+			</section>
+
+			
+<section id="leadership">
 					<div class="section-header">
 						<h2>Executive Leadership</h2>
 						<p>Highly qualified resources specializing in Microsoft ecosystem, Cloud & DevOps, AI/ML, and Full-stack development.</p>
